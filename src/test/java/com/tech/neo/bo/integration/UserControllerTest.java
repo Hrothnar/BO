@@ -274,7 +274,7 @@ public class UserControllerTest {
                 .andExpect(status().isOk());
 
         long toAccountId = 4;
-        double amount = 140.22;
+        double amount = 14000.22;
 
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/user/account/transfer?to=" + toAccountId + "&amount=" + amount)
                         .contentType(MediaType.TEXT_PLAIN)

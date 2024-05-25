@@ -22,7 +22,7 @@ public class SecurityFilter {
 
     @Bean()
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests((request) -> request.requestMatchers("/auth/**").permitAll());
+        http.authorizeHttpRequests((request) -> request.requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/auth/**").permitAll());
         http.authorizeHttpRequests((request) -> request.anyRequest().authenticated());
         http.sessionManagement((sm) -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         http.authenticationProvider(authenticationProvider);
